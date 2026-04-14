@@ -71,45 +71,15 @@
 
         <div style="display: flex; width: 90%; max-width: 1400px; margin: 0 auto; align-items: center;">
             
-            <!-- Left: Spiral Arrow 3D -->
+            <!-- Left: Spiral Arrow Image -->
             <div class="spiral-arrow-container">
-                <model-viewer 
-                    id="spiral-model"
-                    src="../../BackGroundPNG/xoanoc.glb" 
-                    alt="Xoáy ốc 3D" 
-                    auto-rotate 
-                    camera-orbit="45deg 75deg 100%"
-                    camera-controls 
-                    shadow-intensity="1" 
-                    exposure="1"
-                    interaction-prompt="none"
+                <img 
+                    src="../../BackgroundPNG/spiral_arrow.png" 
+                    alt="Xoáy ốc phủ định" 
                     class="spiral-arrow"
-                    style="background: transparent;"
+                    style="width: 100%; height: auto; display: block;"
                 >
-                </model-viewer>
             </div>
-            
-            <script>
-                const modelViewer = document.getElementById('spiral-model');
-                
-                const rotateRightToLeft = () => {
-                    const orbit = modelViewer.getCameraOrbit();
-                    // Tăng theta nhanh hơn (0.04) để mô hình xoay nhanh hơn nữa
-                    modelViewer.cameraOrbit = `${orbit.theta + 0.08}rad ${orbit.phi}rad ${orbit.radius}m`;
-                    requestAnimationFrame(rotateRightToLeft);
-                };
-
-                // Chạy ngay khi có thể
-                if (modelViewer.complete) {
-                    modelViewer.autoRotate = false;
-                    rotateRightToLeft();
-                } else {
-                    modelViewer.addEventListener('load', () => {
-                        modelViewer.autoRotate = false;
-                        rotateRightToLeft();
-                    });
-                }
-            </script>
 
             <!-- Right: Content -->
             <div class="text-content">
