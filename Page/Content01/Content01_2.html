@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 3</title>
+    <link rel="stylesheet" href="../../style.css?v=2">
+    <script src="../../assets/sidebar.js" defer></script>
+</head>
+<body style="background: url('../../BackgroundPNG/Slide5.PNG') center/cover no-repeat;">
+    <div class="slide-container" style="background: transparent; justify-content: flex-start;">
+        
+        <h1 class="title-huge" style="font-size: 3.5rem; margin-top: 8vh; text-align: center; width: 100%;">QUY LUẬT LƯỢNG - CHẤT</h1>
+
+        <div class="comparison-container">
+            <!-- Concept: Chất -->
+            <div class="comparison-item">
+                <div class="glow-icon-circle">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="concept-text-box" style="font-size: 1.5rem; line-height: 1.6;">
+                    <strong style="font-size: 1.8rem;">“Chất”</strong> là những đặc điểm khách quan vốn có làm cho sự vật đó là nó chứ không phải là một sự vật khác. Chất được tạo nên từ các yếu tố cấu thành và cách thức liên kết (kết cấu) giữa các yếu tố đó.
+                </div>
+            </div>
+
+            <!-- Concept: Lượng -->
+            <div class="comparison-item">
+                <div class="glow-icon-circle">
+                    <i class="fas fa-gear"></i>
+                </div>
+                <div class="concept-text-box" style="font-size: 1.5rem; line-height: 1.6;">
+                    <strong style="font-size: 1.8rem;">“Lượng”</strong> là những đặc tính có thể đo lường được của sự vật, như kích thước (to/nhỏ), số lượng (nhiều/ít), trình độ (cao/thấp), nhịp độ và tốc độ vận động (nhanh/chậm).
+                </div>
+            </div>
+        </div>
+
+        <div class="source-citation" style="text-align: center; width: 100%; right: 0; bottom: 8vh;">
+            (Phạm Văn Đức, 2019, tr. 127-128)
+        </div>
+
+    </div>
+
+    <script>
+        // Entrance Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const items = document.querySelectorAll('.comparison-item');
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate');
+                    }, index * 400);
+                });
+            }, 300);
+        });
+
+        // Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                window.location.href = 'Content01_1.html';
+            } else if (e.key === 'ArrowRight' || e.key === ' ') {
+                window.location.href = 'Content01_3.html';
+            }
+        });
+    </script>
+</body>
+</html>

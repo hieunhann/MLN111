@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 6</title>
+    <link rel="stylesheet" href="../../style.css?v=2">
+    <script src="../../assets/sidebar.js" defer></script>
+</head>
+<body style="background: url('../../BackgroundPNG/Slide3.PNG') center/cover no-repeat;">
+    <div class="slide-container" style="background: transparent; justify-content: flex-start;">
+        
+        <h1 class="title-huge" style="font-size: 3.2rem; margin-top: 5vh; text-align: center; width: 100%;">QUY LUẬT LƯỢNG - CHẤT</h1>
+        <h2 style="font-size: 1.6rem; text-align: center; width: 100%; margin-top: 1.5rem; margin-bottom: 3rem; opacity: 0.8; font-family: 'Montserrat', sans-serif; letter-spacing: 2px;">Ý nghĩa phương pháp luận</h2>
+
+        <div class="methodology-container">
+            <!-- Item 1 -->
+            <div class="methodology-item">
+                <div class="methodology-icon-stack" style="margin-bottom: 0;">
+                    <div class="step-circle-small">1</div>
+                </div>
+                <h3 class="methodology-title" style="text-align: center; margin-top: 0.5rem;">Không được<br>nôn nóng</h3>
+                <p class="methodology-desc">Mọi sự thay đổi về chất (thành công, sự nghiệp, học vấn) bắt buộc phải dựa trên quá trình tích lũy từng chút một về lượng</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="methodology-item">
+                <div class="methodology-icon-stack" style="margin-bottom: 0;">
+                    <div class="step-circle-small">2</div>
+                </div>
+                <h3 class="methodology-title" style="text-align: center; margin-top: 0.5rem;">Không được<br>bảo thủ, trì trệ</h3>
+                <p class="methodology-desc">Khi Lượng đã tích lũy đủ đến "điểm nút", bạn phải dũng cảm và chủ động thực hiện "bước nhảy" để vươn lên.</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="methodology-item">
+                <div class="methodology-icon-stack" style="margin-bottom: 0;">
+                    <div class="step-circle-small">3</div>
+                </div>
+                <h3 class="methodology-title" style="text-align: center; margin-top: 0.5rem;">Hành động<br>linh hoạt</h3>
+                <p class="methodology-desc">Tùy từng quy mô và hoàn cảnh mà ta chọn thực hiện bước nhảy dần dần hay bước nhảy đột biến. Không phải sự chuyển đổi nào cũng giống nhau</p>
+            </div>
+        </div>
+
+        <div class="source-citation" style="text-align: center; width: 100%; right: 0; bottom: 5vh;">
+            (Phạm Văn Đức, 2019, tr. 131)
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const items = document.querySelectorAll('.methodology-item');
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate');
+                    }, index * 400);
+                });
+            }, 300);
+        });
+
+        // Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                window.location.href = 'Content01_3.html';
+            } else if (e.key === 'ArrowRight' || e.key === ' ') {
+                window.location.href = '../Content03/Content03_1.html';
+            }
+        });
+    </script>
+</body>
+</html>

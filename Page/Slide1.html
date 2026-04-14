@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 1</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body style="background-image: url('../BackgroundPNG/Slide3.png'); background-size: cover; background-position: center;">
+    <div class="slide-container" style="background: transparent; justify-content: center; padding-top: 0;">
+        
+        <h1 class="title-huge" style="font-size: 8rem; margin-bottom: 8vh; text-align: center;">MỤC LỤC</h1>
+
+        <div class="contents-grid" style="margin: 0 auto; display: grid; grid-template-columns: 420px 420px; gap: 2.5rem 5vw; justify-content: center; transform: translateX(10vw);">
+            <!-- Column 1 -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <a href="Content01/Content01_1.html" class="content-item">
+                    <div class="number-box">1</div>
+                    <div class="content-text">Bối cảnh</div>
+                </a>
+                <a href="Content01/Content01_2.html" class="content-item">
+                    <div class="number-box">2</div>
+                    <div class="content-text">Quy luật lượng chất</div>
+                </a>
+                <a href="Content03/Content03_1.html" class="content-item">
+                    <div class="number-box">3</div>
+                    <div class="content-text">Phủ định của phủ định</div>
+                </a>
+                <a href="Content02/Content02_0.html" class="content-item">
+                    <div class="number-box">4</div>
+                    <div class="content-text" style="white-space: nowrap;">Quy luật mâu thuẫn</div>
+                </a>
+                <a href="Content02/Content02_5.html" class="content-item">
+                    <div class="number-box">5</div>
+                    <div class="content-text">Dẫn chứng</div>
+                </a>
+            </div>
+
+            <!-- Column 2 -->
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <a href="Content04/Content04_0.html" class="content-item">
+                    <div class="number-box">6</div>
+                    <div class="content-text">Kết luận bài học</div>
+                </a>
+                <a href="Content04/Content04_1.html" class="content-item">
+                    <div class="number-box">7</div>
+                    <div class="content-text">Q&A</div>
+                </a>
+                <a href="Content05/Content05_1.html" class="content-item">
+                    <div class="number-box">8</div>
+                    <div class="content-text">AI Usage</div>
+                </a>
+                <a href="Content05/Content05_2.html" class="content-item">
+                    <div class="number-box">9</div>
+                    <div class="content-text">Reference</div>
+                </a>
+                <a href="Content06/Content06_1.html" class="content-item">
+                    <div class="number-box">10</div>
+                    <div class="content-text">Cảm ơn</div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Key Navigation -->
+    <script>
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                window.location.href = 'Content01/Content01_1.html'; // Assuming content starts here
+            } else if (e.key === 'ArrowLeft') {
+                window.location.href = 'Slide0.html';
+            }
+        });
+    </script>
+</body>
+</html>

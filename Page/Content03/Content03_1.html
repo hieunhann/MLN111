@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 7</title>
+    <link rel="stylesheet" href="../../style.css?v=2">
+    <script src="../../assets/sidebar.js" defer></script>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
+    <style>
+        .spiral-arrow-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
+
+        .spiral-arrow {
+            width: 100%;
+            height: 60vh;
+            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+            animation: fadeInScale 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            --poster-color: transparent;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.7); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .text-content {
+            flex: 1;
+        }
+
+        .highlight-purple {
+            color: #9d8df1;
+            font-weight: 700;
+        }
+
+        .highlight-green {
+            color: #00ff88;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .rule-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #ffffff;
+            margin-bottom: 3rem;
+            text-align: justify;
+        }
+
+        .conclusion-arrow {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body style="background: url('../../BackgroundPNG/Slide3.PNG') center/cover no-repeat;">
+    <div class="slide-container" style="background: transparent;">
+        
+        <h1 class="title-huge" style="font-size: 4rem; text-align: center; width: 100%; margin-bottom: 8vh; letter-spacing: 2px;">
+            Phủ định Của Phủ định
+        </h1>
+
+        <div style="display: flex; width: 90%; max-width: 1400px; margin: 0 auto; align-items: center;">
+            
+            <!-- Left: Spiral Arrow 3D -->
+            <div class="spiral-arrow-container">
+                <model-viewer 
+                    id="spiral-model"
+                    src="../../BackGroundPNG/xoanoc.glb" 
+                    alt="Xoáy ốc 3D" 
+                    auto-rotate 
+                    camera-orbit="45deg 75deg 100%"
+                    camera-controls 
+                    shadow-intensity="1" 
+                    exposure="1"
+                    interaction-prompt="none"
+                    class="spiral-arrow"
+                    style="background: transparent;"
+                >
+                </model-viewer>
+            </div>
+            
+            <script>
+                const modelViewer = document.getElementById('spiral-model');
+                
+                const rotateRightToLeft = () => {
+                    const orbit = modelViewer.getCameraOrbit();
+                    // Tăng theta nhanh hơn (0.04) để mô hình xoay nhanh hơn nữa
+                    modelViewer.cameraOrbit = `${orbit.theta + 0.08}rad ${orbit.phi}rad ${orbit.radius}m`;
+                    requestAnimationFrame(rotateRightToLeft);
+                };
+
+                // Chạy ngay khi có thể
+                if (modelViewer.complete) {
+                    modelViewer.autoRotate = false;
+                    rotateRightToLeft();
+                } else {
+                    modelViewer.addEventListener('load', () => {
+                        modelViewer.autoRotate = false;
+                        rotateRightToLeft();
+                    });
+                }
+            </script>
+
+            <!-- Right: Content -->
+            <div class="text-content">
+                <p class="rule-text">
+                    Quy luật này chỉ ra khuynh hướng đi lên, hình thức xoáy ốc, và kết quả của sự phát triển, thông qua sự thống nhất và tính kế thừa trong quá trình phát triển.
+                </p>
+
+                <div class="conclusion-arrow">
+                    <span style="color: var(--accent-blue);">➔</span>
+                    <span>Sự vật, hiện tượng mới ra đời từ sự vật, hiện tượng cũ.</span>
+                </div>
+
+                <div class="conclusion-arrow">
+                    <span style="color: var(--accent-blue);">➔</span>
+                    <span>
+                        Phát triển từ <span class="highlight-purple">thấp</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">cao</span>, 
+                        từ <span class="highlight-purple">đơn giản</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">phức tạp</span>, 
+                        từ <span class="highlight-purple">kém hoàn thiện</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">hoàn thiện hơn</span>
+                    </span>
+                </div>
+
+                <div style="text-align: right; margin-top: 4rem; opacity: 0.5; font-size: 1.1rem; font-style: italic;">
+                    (Phạm Văn Đức, 2019, tr. 135)
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                window.location.href = '../Content01/Content01_5.html';
+            } else if (e.key === 'ArrowRight' || e.key === ' ') {
+                window.location.href = 'Content03_2.html';
+            }
+        });
+    </script>
+</body>
+</html>
