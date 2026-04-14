@@ -9,20 +9,21 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"></script>
     <style>
         .spiral-arrow-container {
-            flex: 1;
+            flex: 0 0 auto;
+            width: 280px;
             display: flex;
             justify-content: center;
             align-items: center;
-            perspective: 1000px;
         }
 
         .spiral-arrow {
             width: 100%;
-            height: 60vh;
-            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+            height: auto;
+            max-height: 50vh;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
             animation: fadeInScale 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
             opacity: 0;
-            --poster-color: transparent;
         }
 
         @keyframes fadeInScale {
@@ -62,46 +63,49 @@
         }
     </style>
 </head>
-<body style="background: url('../../BackgroundPNG/Slide3.PNG') center/cover no-repeat;">
-    <div class="slide-container" style="background: transparent;">
+<body style="background: url('../../BackgroundPNG/slide3.png') center/cover no-repeat;">
+    <div class="slide-container" style="background: transparent; justify-content: flex-start; padding: 4vh 8% 3vh;">
         
-        <h1 class="title-huge" style="font-size: 4rem; text-align: center; width: 100%; margin-bottom: 8vh; letter-spacing: 2px;">
-            Phủ định Của Phủ định
+        <!-- Title -->
+        <h1 class="title-huge" style="font-size: 3.5rem; text-align: center; width: 100%; margin-bottom: 4vh; letter-spacing: 3px; flex-shrink: 0;">
+            Phủ Định Của Phủ Định
         </h1>
 
-        <div style="display: flex; width: 90%; max-width: 1400px; margin: 0 auto; align-items: center;">
+        <!-- Main content row -->
+        <div style="display: flex; width: 100%; flex: 1; align-items: center; gap: 5vw;">
             
             <!-- Left: Spiral Arrow Image -->
-            <div class="spiral-arrow-container">
+            <div class="spiral-arrow-container" style="flex: 0 0 auto; width: 300px;">
                 <img 
                     src="../../BackgroundPNG/spiral_arrow.png" 
                     alt="Xoáy ốc phủ định" 
                     class="spiral-arrow"
-                    style="width: 100%; height: auto; display: block;"
+                    style="width: 100%; height: auto; max-height: 55vh; object-fit: contain; display: block;"
                 >
             </div>
 
-            <!-- Right: Content -->
-            <div class="text-content">
-                <p class="rule-text">
-                    Quy luật này chỉ ra khuynh hướng đi lên, hình thức xoáy ốc, và kết quả của sự phát triển, thông qua sự thống nhất và tính kế thừa trong quá trình phát triển.
+            <!-- Right: Content Card -->
+            <div style="flex: 1; background: rgba(10, 20, 50, 0.55); backdrop-filter: blur(16px); border: 1px solid rgba(58,134,255,0.3); border-radius: 24px; padding: 2.5rem 2.8rem;">
+
+                <p class="rule-text" style="font-size: 1.25rem; line-height: 1.8; margin-bottom: 2rem; border-left: 4px solid var(--accent-blue); padding-left: 1.2rem;">
+                    Quy luật này chỉ ra khuynh hướng <strong>đi lên</strong>, hình thức <strong>xoáy ốc</strong>, và kết quả của sự phát triển, thông qua sự thống nhất và tính kế thừa trong quá trình phát triển.
                 </p>
 
-                <div class="conclusion-arrow">
-                    <span style="color: var(--accent-blue);">➔</span>
+                <div class="conclusion-arrow" style="font-size: 1.2rem; margin-bottom: 1.2rem;">
+                    <span style="color: var(--accent-blue); font-size: 1.4rem;">➔</span>
                     <span>Sự vật, hiện tượng mới ra đời từ sự vật, hiện tượng cũ.</span>
                 </div>
 
-                <div class="conclusion-arrow">
-                    <span style="color: var(--accent-blue);">➔</span>
+                <div class="conclusion-arrow" style="font-size: 1.2rem; margin-bottom: 1.2rem;">
+                    <span style="color: var(--accent-blue); font-size: 1.4rem;">➔</span>
                     <span>
-                        Phát triển từ <span class="highlight-purple">thấp</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">cao</span>, 
-                        từ <span class="highlight-purple">đơn giản</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">phức tạp</span>, 
+                        Phát triển từ <span class="highlight-purple">thấp</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">cao</span>,
+                        từ <span class="highlight-purple">đơn giản</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">phức tạp</span>,
                         từ <span class="highlight-purple">kém hoàn thiện</span> <span style="opacity: 0.5;">→</span> <span class="highlight-green">hoàn thiện hơn</span>
                     </span>
                 </div>
 
-                <div style="text-align: right; margin-top: 4rem; opacity: 0.5; font-size: 1.1rem; font-style: italic;">
+                <div style="text-align: right; margin-top: 1.5rem; opacity: 0.5; font-size: 1rem; font-style: italic;">
                     (Phạm Văn Đức, 2019, tr. 135)
                 </div>
             </div>
